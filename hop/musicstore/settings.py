@@ -31,9 +31,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','*']
 
 INTERNAL_IPS = ['127.0.0.1','localhost']
 
@@ -70,6 +70,8 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATICFILES_DIRS = [
     '%s/static/' % (PROJECT_DIR),
 ]
+
+STATIC_ROOT = '%s/tmp/' % (PROJECT_DIR)
 
 
 class InvalidTemplateVariable(str):
