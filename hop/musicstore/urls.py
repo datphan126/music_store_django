@@ -3,6 +3,7 @@ from django.conf.urls import url
 from django.views.generic import TemplateView
 from django.contrib import admin
 from musicstore.song_mgt import views as song_views
+from django.views.static import serve
 
 # For debugging purposes
 from django.conf import settings
