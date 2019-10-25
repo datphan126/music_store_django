@@ -13,6 +13,9 @@ urlpatterns = [
     url(r'^payment/', include('musicstore.payment.urls',namespace="payment_ns")),
     url(r'^events/', include('musicstore.events.urls',namespace="events_ns")),
     url(r'^song_mgt/', include('musicstore.song_mgt.urls',namespace="song_mgt_ns")),
+	
+	# For serving static contents when deploying in production or when DEBUG=False
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
 
 if settings.DEBUG:
